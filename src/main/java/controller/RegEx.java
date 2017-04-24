@@ -1,12 +1,13 @@
 package controller;
 
 public interface RegEx {
-	public static final String NAME = "[A-Z][a-z]{1,15}";
-	public static final String NICK = ".{3,15}";
-	public static final String COMMENTARY = ".{1,60}";
-	public static final String PHONE_NUMBER = "";
-	public static final String MOBILE_PHONE_NUMBER = "";
-	public static final String EMAIL = "";
-	public static final String SKYPE = "";
+	String NAME = "[A-Z]{1}[a-z]+";
+	String NICK = ".{3,15}";
+	String COMMENTARY = ".{1,60}";
+	String PHONE_NUMBER = "";
+	String MOBILE_PHONE_NUMBER = "";
+	String EMAIL = "(.)+[@]{1}[a-z]+[.]{1}[a-z]+";
+	String SKYPE = "[a-zA-Z]+[.]?";
+	String INDEX = "[0-9]{3,5}";
 
 }

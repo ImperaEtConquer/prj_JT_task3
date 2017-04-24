@@ -6,12 +6,20 @@ import view.View;
 
 public class ScannerUtil {
 	
-	public String getRequiredField(Scanner sc, String regex, View view) {
-		
-		String result;
+	private Scanner sc;
+	private View view;
+	
+	public ScannerUtil(Scanner sc, View view) {
+		this.sc = sc;
+		this.view = view;
+	}
 
+	public String someMethod(String regex) {
+
+		String result;
+		
 		while (!(sc.hasNext() && (result = sc.next()).matches(regex))) {
-			view.error();
+			// view error
 		}
 		return result;
 
