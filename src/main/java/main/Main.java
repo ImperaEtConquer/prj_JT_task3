@@ -5,7 +5,7 @@ import model.Note;
 import view.View;
 
 public class Main {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		Note model = new Note();
 		View view = new View();
 		Controller controller = new Controller(model, view);

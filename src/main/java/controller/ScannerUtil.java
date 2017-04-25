@@ -19,7 +19,7 @@ public class ScannerUtil {
 		String result;
 		
 		while (!(sc.hasNext() && (result = sc.next()).matches(regex))) {
-			// view error
+			view.printErrorMessage();
 		}
 		return result;
 

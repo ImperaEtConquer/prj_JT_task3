@@ -1,7 +1,5 @@
 package model;
 
 public enum Groups {
-	FRIENDS,
-	FAMILY,
-	WORK
+	FRIENDS, FAMILY, WORK;
 }

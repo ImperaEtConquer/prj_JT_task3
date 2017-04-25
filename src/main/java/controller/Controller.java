@@ -15,10 +15,10 @@ public class Controller {
 		this.model = model;
 	}
 	
-	public void processUser() {
+	public void processUser() throws Exception {
 		Scanner sc = new Scanner(System.in);
-		ScannerUtil scannerUtil = new ScannerUtil(sc, view);
-		InputController inputController = new InputController(scannerUtil, model);
+		InputController inputController = new InputController(sc, model, view);
 		inputController.addNewNote();
+		System.out.println(model.toString());
 	}
 }

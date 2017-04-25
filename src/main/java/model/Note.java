@@ -95,4 +95,13 @@ public class Note {
 		this.lastEdited = lastEdited;
 	}
 
+	@Override
+	public String toString() {
+		return "Note [firstname=" + firstname + ", lastname=" + lastname + ", formalname=" + getFormalName() +  ", middlename=" + middlename + ", nickname="
+				+ nickname + ", group=" + group + ", phone=" + phone + ", email=" + email + ", skype=" + skype
+				+ ", lastEdited=" + lastEdited + "]";
+	}
+	
+	
+
 }
