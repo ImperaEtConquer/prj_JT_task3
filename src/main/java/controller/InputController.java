@@ -36,27 +36,27 @@ public class InputController {
 
 	public void addNewNote() throws Exception {
 		view.printInputMessage(Messages.FIRSTNAME);
-		firstname = scannerUtil.someMethod(RegEx.NAME);
+		firstname = scannerUtil.getStringValueFromScanner(RegEx.NAME);
 		
 		view.printInputMessage(Messages.LASTNAME);
-		lastname = scannerUtil.someMethod(RegEx.NAME);
+		lastname = scannerUtil.getStringValueFromScanner(RegEx.NAME);
 		
 		view.printInputMessage(Messages.MIDDLE_NAME);
-		middlename = scannerUtil.someMethod(RegEx.NAME);
+		middlename = scannerUtil.getStringValueFromScanner(RegEx.NAME);
 		
 		view.printInputMessage(Messages.NICK_NAME);
-		nickname = scannerUtil.someMethod(RegEx.NICK);
+		nickname = scannerUtil.getStringValueFromScanner(RegEx.NICK);
 		
 		group = getGroup();
 		
 		view.printInputMessage(Messages.PHONE);
-		phone = scannerUtil.someMethod(RegEx.PHONE_NUMBER);
+		phone = scannerUtil.getStringValueFromScanner(RegEx.PHONE_NUMBER);
 		
 		view.printInputMessage(Messages.EMAIL);
-		email = scannerUtil.someMethod(RegEx.EMAIL);
+		email = scannerUtil.getStringValueFromScanner(RegEx.EMAIL);
 		
 		view.printInputMessage(Messages.SKYPE);
-		skype = scannerUtil.someMethod(RegEx.SKYPE);
+		skype = scannerUtil.getStringValueFromScanner(RegEx.SKYPE);
 		
 		lastEdited = LocalDateTime.now().toString();
 		
@@ -82,9 +82,10 @@ public class InputController {
 		}
 		sb.deleteCharAt(sb.length()-1);
 		
-		view.printInputMessage(sb.toString());
+		view.printInputMessage(Messages.GROUP);
+		view.printMessage(sb.toString());
+		String userChoice = scannerUtil.getStringValueFromScanner(sb.toString());
 		
-		String userChoice = scannerUtil.someMethod(sb.toString());
 		if (userChoice.equals(Groups.FAMILY.toString())) {
 			return Groups.FAMILY;
 		}

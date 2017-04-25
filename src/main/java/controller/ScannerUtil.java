@@ -14,7 +14,7 @@ public class ScannerUtil {
 		this.view = view;
 	}
 
-	public String someMethod(String regex) {
+	public String getStringValueFromScanner(String regex) {
 
 		String result;
 		

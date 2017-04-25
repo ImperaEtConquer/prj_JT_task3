@@ -9,7 +9,8 @@ public interface Messages {
 	String PHONE = "phone number";
 	String SKYPE = "skype";
 	String EMAIL = "email";
-
+	String GROUP = "group";
+	
 	String ERROR = "Wrong entry.";
 
 }
