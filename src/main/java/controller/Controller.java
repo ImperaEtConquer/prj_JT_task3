@@ -8,17 +8,17 @@ import view.View;
 public class Controller {
 	
 	private View view;
-	private Note model;
+	private Note note;
 	
-	public Controller(Note model, View view) {
+	public Controller(Note note, View view) {
 		this.view = view;
-		this.model = model;
+		this.note = note;
 	}
 	
 	public void processUser() throws Exception {
 		Scanner sc = new Scanner(System.in);
-		InputController inputController = new InputController(sc, model, view);
+		InputController inputController = new InputController(sc, note, view);
 		inputController.addNewNote();
-		System.out.println(model.toString());
+		System.out.println(note.toString());
 	}
 }
