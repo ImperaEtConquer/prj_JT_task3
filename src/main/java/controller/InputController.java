@@ -3,8 +3,10 @@ package controller;
 import java.time.LocalDateTime;
 import java.util.Scanner;
 
+import exceptions.AlreadyExistException;
 import model.Groups;
 import model.Note;
+import model.Notebook;
 import view.GlobalConstants;
 import view.Messages;
 import view.View;
@@ -12,7 +14,7 @@ import view.View;
 public class InputController {
 
 	private ScannerUtil scannerUtil;
-	private Note note;
+	private Notebook notebook;
 	private View view;
 
 	private String firstname;
@@ -28,10 +30,10 @@ public class InputController {
 
 	private String lastEdited;
 
-	public InputController(Scanner sc, Note note, View view) {
+	public InputController(Scanner sc, Notebook notebook, View view) {
 		this.scannerUtil = new ScannerUtil(sc, view);
 		this.view = view;
-		this.note = note;
+		this.notebook = notebook;
 	}
 
 	public void addNewNote() throws Exception {
@@ -63,27 +65,36 @@ public class InputController {
 		confirm();
 	}
 
-	private void confirm() {
+	private void confirm() throws Exception {
+		Note note = new Note();
 		note.setFirstname(firstname);
 		note.setLastname(lastname);
 		note.setMiddlename(middlename);
-		try {
-			note.setNickname(nickname);
-		} catch (Exception e) {
-			view.printErrorMessage();
-			editNickName(nickname);
-		}
+		note.setNickname(nickname);
 		note.setGroup(group);
 		note.setPhone(phone);
 		note.setEmail(email);
 		note.setSkype(skype);
 		note.setLastEdited(lastEdited);
+
+		try {
+			addToNoteBook(note);
+			view.printMessage(Messages.SUCCESS);
+		}
+		catch (AlreadyExistException e) {
+			view.printErrorMessage(e);
+			editNickName();
+		}
 	}
-	
-	private void editNickName(String nickname) {
+
+	private void editNickName() throws Exception {
 		view.printInputMessage(Messages.NICK_NAME);
 		nickname = scannerUtil.getStringValueFromScanner(RegEx.NICK);
 		confirm();
+	}
+	
+	private void addToNoteBook(Note note) throws Exception {
+		notebook.addNoteToNoteBook(note);
 	}
 
 	private Groups getGroup() {

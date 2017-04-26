@@ -2,6 +2,7 @@ package controller;
 
 import java.util.Scanner;
 
+import view.Messages;
 import view.View;
 
 public class ScannerUtil {
@@ -19,7 +20,7 @@ public class ScannerUtil {
 		String result;
 
 		while (!(sc.hasNext() && (result = sc.next()).matches(regex))) {
-			view.printErrorMessage();
+			view.printErrorMessage(Messages.ERROR);
 		}
 		return result;
 

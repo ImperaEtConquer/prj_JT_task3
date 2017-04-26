@@ -1,14 +1,14 @@
 package main;
 
 import controller.Controller;
-import model.Note;
+import model.Notebook;
 import view.View;
 
 public class Main {
 	public static void main(String[] args) throws Exception {
-		Note model = new Note();
+		Notebook notebook = new Notebook();
 		View view = new View();
-		Controller controller = new Controller(model, view);
+		Controller controller = new Controller(notebook, view);
 		controller.processUser();
 	}
 }

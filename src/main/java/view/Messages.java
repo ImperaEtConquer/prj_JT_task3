@@ -1,7 +1,6 @@
 package view;
 
 public interface Messages {
-	String PLEASE_INPUT = "Please input";
 	String FIRSTNAME = "firstname";
 	String LASTNAME = "lastname";
 	String MIDDLE_NAME = "middlename";
@@ -11,6 +10,10 @@ public interface Messages {
 	String EMAIL = "email";
 	String GROUP = "group";
 	
+	String PLEASE_INPUT = "Please input";
+	String SUCCESS = "Success.";
+	
 	String ERROR = "Wrong entry.";
+	String ALREADY_EXISTS = "Nickname already exists.";
 
 }

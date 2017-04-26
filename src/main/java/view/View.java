@@ -6,8 +6,12 @@ public class View {
 		System.out.println(message);
 	}
 	
-	public void printErrorMessage() {
-		System.err.println(Messages.ERROR);	
+	public void printErrorMessage(String message) {
+		System.err.println(message);	
+	}
+	
+	public void printErrorMessage(Exception e) {
+		System.err.println(e);
 	}
 	
 	public void printInputMessage(String inputVariable) {

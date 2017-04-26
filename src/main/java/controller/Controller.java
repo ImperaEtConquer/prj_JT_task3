@@ -2,23 +2,26 @@ package controller;
 
 import java.util.Scanner;
 
-import model.Note;
+import model.Notebook;
 import view.View;
 
 public class Controller {
 	
 	private View view;
-	private Note note;
+	private Notebook notebook;
 	
-	public Controller(Note note, View view) {
+	public Controller(Notebook notebook, View view) {
 		this.view = view;
-		this.note = note;
+		this.notebook = notebook;
 	}
 	
 	public void processUser() throws Exception {
 		Scanner sc = new Scanner(System.in);
-		InputController inputController = new InputController(sc, note, view);
+		InputController inputController = new InputController(sc, notebook, view);
+		
+		while(true)
 		inputController.addNewNote();
-		System.out.println(note.toString());
 	}
+	
+	
 }
