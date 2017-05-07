@@ -23,10 +23,10 @@ public class Notebook {
 		return notes;
 	}
 
-	private boolean isNickNameAlreadyExist(String username) {
+	public boolean isNickNameAlreadyExist(String nickname) {
 		isNickNameAlreadyExist = false;
 		notes.forEach((k, v) -> {
-			if (v.getNickname().equals(username)) {
+			if (v.getNickname().equals(nickname)) {
 				isNickNameAlreadyExist = true;
 			}
 		});
